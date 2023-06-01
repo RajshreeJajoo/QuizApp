@@ -19,7 +19,6 @@ const Quiz = ({navigation}) => {
     useEffect(() => {
         axios.get(`https://opentdb.com/api.php?amount=10&type=multiple&encode=url3986`).then((res) => {
             console.log("categories", res.data)
-            // console.log("resultData[quesNumber]",resultData[quesNumber])
             setResultdata(res.data.results);
             setOptions(generateSuffleOptions(res.data.results[0]))
         })
