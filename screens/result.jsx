@@ -7,17 +7,20 @@ const Result = ({navigation,route}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Result</Text>
-      <View style={{flex: 0.9}}>
+
+    <View style={{flex: 0.9}}>
      {score >=80 ? 
      <Image style={{width:'105%' ,height:'500%',alignSelf:'center'}} 
      source={require('../assests/Pass.png')}/> :
      <Image style={{width:'125%' ,height:'500%',alignSelf:'center'}} 
      source={require('../assests/Fail.png')}/>
      }
-    </View>
+     </View>
+
       <View style={styles.scoreView}>
       <Text style={score >=80 ? {...styles.score,color:'green'} : {...styles.score,color:'red'}}>Your Score is {score}</Text>
       </View>
+
       <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Home")}>
         <Text style={styles.buttonText}>Go To Home</Text>
       </TouchableOpacity>
