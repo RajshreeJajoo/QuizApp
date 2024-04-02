@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View ,Image} from 'react-native'
+import { StyleSheet, Text, View ,Image,Platform} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import React,{ useState } from 'react'
 
@@ -7,7 +7,7 @@ const Result = ({navigation,route}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Result</Text>
-      <View style={{flex:1}}>
+      <View style={{flex: 0.9}}>
      {score >=80 ? 
      <Image style={{width:'105%' ,height:'500%',alignSelf:'center'}} 
      source={require('../assests/Pass.png')}/> :
@@ -16,7 +16,7 @@ const Result = ({navigation,route}) => {
      }
     </View>
       <View style={styles.scoreView}>
-      <Text style={styles.score}>Your Score is {score}</Text>
+      <Text style={score >=80 ? {...styles.score,color:'green'} : {...styles.score,color:'red'}}>Your Score is {score}</Text>
       </View>
       <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Home")}>
         <Text style={styles.buttonText}>Go To Home</Text>
@@ -35,14 +35,13 @@ const styles = StyleSheet.create({
     fontWeight:'600',
     fontSize:26,
     alignSelf:'center',
-    marginVertical:'20%'
+    marginVertical:Platform.OS === 'android'?'10%':'5%',
   },
   score:{
     fontSize:30,
     marginVertical:'30%',
     alignSelf:'center',
-    color:'black'
-
+    fontWeight:'bold'    
   },
   buttonText:{
     alignSelf:'center',
@@ -60,8 +59,7 @@ const styles = StyleSheet.create({
     marginBottom:'10%',
 },
 scoreView:{
-    borderRadius:60,
-    marginTop:'20%',
+    marginTop:Platform.OS === 'android'?'60%':'50%',
     width:'60%',
     alignSelf:'center'
 
