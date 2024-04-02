@@ -68,16 +68,16 @@ const Quiz = ({navigation}) => {
       </View>
       <View style={{flex:1}}>
       <TouchableOpacity style={[styles.button,{backgroundColor:'#D192FF'}]} onPress={()=>sumbitCorrectAnswer(options[0])}>
-            <Text>{decodeURIComponent(options[0])}</Text>
+            <Text style={{color:'black',fontSize:20}}>{decodeURIComponent(options[0])}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button,{backgroundColor:'#D192FF'}]} onPress={()=>sumbitCorrectAnswer(options[1])}>
-            <Text>{decodeURIComponent(options[1])}</Text>
+            <Text style={{color:'black',fontSize:20}}>{decodeURIComponent(options[1])}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button,{backgroundColor:'#D192FF'}]} onPress={()=>sumbitCorrectAnswer(options[2])}>
-            <Text>{decodeURIComponent(options[2])}</Text>
+            <Text style={{color:'black',fontSize:20}}>{decodeURIComponent(options[2])}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button,{backgroundColor:'#D192FF'}]} onPress={()=>sumbitCorrectAnswer(options[3])}>
-            <Text>{decodeURIComponent(options[3])}</Text>
+            <Text style={{color:'black',fontSize:20}}>{decodeURIComponent(options[3])}</Text>
         </TouchableOpacity>
       </View>
 
@@ -120,13 +120,17 @@ const styles = StyleSheet.create({
     },
 
     container:{
-        height:'100%'
+        height:'100%',
+        backgroundColor:'white'
     },
     buttonText:{
         color:'white',
+        fontSize:20,
+
     },
     ques:{
-        fontSize:20,
+        fontSize:24,
+        color:'black',
         paddingHorizontal:10,
         paddingVertical:'20%'
         
