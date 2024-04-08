@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         fontSize:26,
         textAlign:'center',
         fontWeight:'600',
+        color:'black',
         paddingVertical:'20%'
     }
 })

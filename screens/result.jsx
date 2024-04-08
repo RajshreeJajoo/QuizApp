@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     fontWeight:'600',
     fontSize:26,
     alignSelf:'center',
+    color:'black',
     marginVertical:Platform.OS === 'android'?'10%':'5%',
   },
   score:{
